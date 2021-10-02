@@ -609,7 +609,7 @@ static void MX_GPIO_Init(void)
 0800048c <HAL_TIM_PeriodElapsedCallback>:
 /* USER CODE BEGIN 4 */
 int counter = 100;
-int counterclock = 200;
+int counterclock = 100;
 int index_led = 0;
 int led_buffer[4] = {1, 2, 3, 0};
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
@@ -635,19 +635,19 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  80004ac:	482a      	ldr	r0, [pc, #168]	; (8000558 <HAL_TIM_PeriodElapsedCallback+0xcc>)
  80004ae:	f000 fca1 	bl	8000df4 <HAL_GPIO_TogglePin>
 	}
-	if(counterclock <= 0)counterclock = 200;
+	if(counterclock <= 0)counterclock = 100;
  80004b2:	4b2a      	ldr	r3, [pc, #168]	; (800055c <HAL_TIM_PeriodElapsedCallback+0xd0>)
  80004b4:	681b      	ldr	r3, [r3, #0]
  80004b6:	2b00      	cmp	r3, #0
  80004b8:	dc03      	bgt.n	80004c2 <HAL_TIM_PeriodElapsedCallback+0x36>
  80004ba:	4b28      	ldr	r3, [pc, #160]	; (800055c <HAL_TIM_PeriodElapsedCallback+0xd0>)
- 80004bc:	22c8      	movs	r2, #200	; 0xc8
+ 80004bc:	2264      	movs	r2, #100	; 0x64
  80004be:	601a      	str	r2, [r3, #0]
  80004c0:	e03a      	b.n	8000538 <HAL_TIM_PeriodElapsedCallback+0xac>
-	else if(counterclock == 200)update7SEG(index_led++);//1
+	else if(counterclock == 100)update7SEG(index_led++);//1
  80004c2:	4b26      	ldr	r3, [pc, #152]	; (800055c <HAL_TIM_PeriodElapsedCallback+0xd0>)
  80004c4:	681b      	ldr	r3, [r3, #0]
- 80004c6:	2bc8      	cmp	r3, #200	; 0xc8
+ 80004c6:	2b64      	cmp	r3, #100	; 0x64
  80004c8:	d108      	bne.n	80004dc <HAL_TIM_PeriodElapsedCallback+0x50>
  80004ca:	4b25      	ldr	r3, [pc, #148]	; (8000560 <HAL_TIM_PeriodElapsedCallback+0xd4>)
  80004cc:	681b      	ldr	r3, [r3, #0]
@@ -657,10 +657,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  80004d4:	4618      	mov	r0, r3
  80004d6:	f000 f845 	bl	8000564 <update7SEG>
  80004da:	e02d      	b.n	8000538 <HAL_TIM_PeriodElapsedCallback+0xac>
-	else if(counterclock == 150)update7SEG(index_led++);//2
+	else if(counterclock == 75)update7SEG(index_led++);//2
  80004dc:	4b1f      	ldr	r3, [pc, #124]	; (800055c <HAL_TIM_PeriodElapsedCallback+0xd0>)
  80004de:	681b      	ldr	r3, [r3, #0]
- 80004e0:	2b96      	cmp	r3, #150	; 0x96
+ 80004e0:	2b4b      	cmp	r3, #75	; 0x4b
  80004e2:	d108      	bne.n	80004f6 <HAL_TIM_PeriodElapsedCallback+0x6a>
  80004e4:	4b1e      	ldr	r3, [pc, #120]	; (8000560 <HAL_TIM_PeriodElapsedCallback+0xd4>)
  80004e6:	681b      	ldr	r3, [r3, #0]
@@ -670,10 +670,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  80004ee:	4618      	mov	r0, r3
  80004f0:	f000 f838 	bl	8000564 <update7SEG>
  80004f4:	e020      	b.n	8000538 <HAL_TIM_PeriodElapsedCallback+0xac>
-	else if(counterclock == 100)update7SEG(index_led++);//3
+	else if(counterclock == 50)update7SEG(index_led++);//3
  80004f6:	4b19      	ldr	r3, [pc, #100]	; (800055c <HAL_TIM_PeriodElapsedCallback+0xd0>)
  80004f8:	681b      	ldr	r3, [r3, #0]
- 80004fa:	2b64      	cmp	r3, #100	; 0x64
+ 80004fa:	2b32      	cmp	r3, #50	; 0x32
  80004fc:	d108      	bne.n	8000510 <HAL_TIM_PeriodElapsedCallback+0x84>
  80004fe:	4b18      	ldr	r3, [pc, #96]	; (8000560 <HAL_TIM_PeriodElapsedCallback+0xd4>)
  8000500:	681b      	ldr	r3, [r3, #0]
@@ -683,10 +683,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  8000508:	4618      	mov	r0, r3
  800050a:	f000 f82b 	bl	8000564 <update7SEG>
  800050e:	e013      	b.n	8000538 <HAL_TIM_PeriodElapsedCallback+0xac>
-	else if(counterclock == 50)update7SEG(index_led++);//4
+	else if(counterclock == 25)update7SEG(index_led++);//4
  8000510:	4b12      	ldr	r3, [pc, #72]	; (800055c <HAL_TIM_PeriodElapsedCallback+0xd0>)
  8000512:	681b      	ldr	r3, [r3, #0]
- 8000514:	2b32      	cmp	r3, #50	; 0x32
+ 8000514:	2b19      	cmp	r3, #25
  8000516:	d108      	bne.n	800052a <HAL_TIM_PeriodElapsedCallback+0x9e>
  8000518:	4b11      	ldr	r3, [pc, #68]	; (8000560 <HAL_TIM_PeriodElapsedCallback+0xd4>)
  800051a:	681b      	ldr	r3, [r3, #0]
