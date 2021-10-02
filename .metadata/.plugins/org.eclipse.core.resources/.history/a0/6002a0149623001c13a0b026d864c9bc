@@ -33,7 +33,6 @@ void display7SEG(int number){
 	update_seven_segment_led_buffer(number);
 	seven_segment_led_driver();
 }
-//////////////////////////////////////////////////////
 
 void initialclock(void){
 	HAL_GPIO_WritePin(ENABLE_7SEG_1_PORT, ENABLE_7SEG_1, SET);

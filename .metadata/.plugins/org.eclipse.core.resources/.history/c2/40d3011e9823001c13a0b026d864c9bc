@@ -6,7 +6,7 @@
 #define MAX_LED							4
 //common Anode 0:off  1:one
 static uint8_t sevenSegmentLEDConversion[10] = {0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07, 0x7f, 0x6f};
-
+static int led_buffer[4] = {0, 0, 0, 0};
 //common Cathode 0:one  1:off
 //uint8_t sevenSegmentLEDConversion[10] = {};
 

@@ -35,7 +35,7 @@ int main(void)
     if(hour >= 24){
     	hour = 0;
     }
-    updateClockBuffer(hour, min);
+    updateClockBuffer();
     HAL_Delay(1000);
   }
   /* USER CODE END 3 */

@@ -43,7 +43,7 @@ void seven_segment_led_driver(void);
 void display7SEG(int number);
 void initialclock(void);
 void update7SEG(int index);
-void updateClockBuffer(int hour, int min);
+void updateClockBuffer(void);
 
 
 

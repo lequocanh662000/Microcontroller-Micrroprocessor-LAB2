@@ -6,7 +6,7 @@
 #define MAX_LED							4
 //common Anode 0:off  1:one
 static uint8_t sevenSegmentLEDConversion[10] = {0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07, 0x7f, 0x6f};
-
+static int led_buffer[4] = {0, 0, 0, 0};
 //common Cathode 0:one  1:off
 //uint8_t sevenSegmentLEDConversion[10] = {};
 
@@ -34,12 +34,16 @@ void display7SEG(int number){
 	seven_segment_led_driver();
 }
 //////////////////////////////////////////////////////
-
+void updateClockBuffer(void){
+	led_buffer[0] = hour/10;
+	led_buffer[1] = hour%10;
+	led_buffer[2] = min/10;
+	led_buffer[3] = min%10;
+}
 void initialclock(void){
 	HAL_GPIO_WritePin(ENABLE_7SEG_1_PORT, ENABLE_7SEG_1, SET);
 	HAL_GPIO_WritePin(ENABLE_7SEG_2_PORT, ENABLE_7SEG_2, SET);
 	HAL_GPIO_WritePin(ENABLE_7SEG_3_PORT, ENABLE_7SEG_3, SET);
 	HAL_GPIO_WritePin(ENABLE_7SEG_4_PORT, ENABLE_7SEG_4, SET);
 }
-
 
