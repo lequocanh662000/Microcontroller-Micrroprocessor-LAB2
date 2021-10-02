@@ -499,3 +499,76 @@
 2021-10-02 20:05:52,842 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 1mS.
 2021-10-02 20:05:52,845 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
 2021-10-02 20:23:25,731 [INFO] Gpio:254 - dependency for GPIO []
+2021-10-02 20:58:27,480 [INFO] Gpio:254 - dependency for GPIO []
+2021-10-02 20:58:30,533 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 306596016 Bytes (1023410176)
+2021-10-02 20:58:32,779 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 329138352 Bytes (1023410176)
+2021-10-02 20:58:32,989 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 350636208 Bytes (1023410176)
+2021-10-02 20:58:33,254 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: NVIC
+2021-10-02 20:58:33,254 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: SYS
+2021-10-02 20:58:33,254 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: GPIO
+2021-10-02 20:58:33,254 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: RCC
+2021-10-02 20:58:33,254 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: TIM1_8F1
+2021-10-02 20:58:33,256 [INFO] CodeGenerator:663 - code generatio: config db path: C:\ST\STM32CubeIDE_1.7.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.3.0.202107141111\\db\
+2021-10-02 20:58:33,507 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\MXTmpFiles\license.tmp_save
+2021-10-02 20:58:33,555 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\MXTmpFiles\license.tmp
+2021-10-02 20:58:33,588 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\MXTmpFiles\gpio.tmp_save
+2021-10-02 20:58:33,635 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\MXTmpFiles\gpio.tmp
+2021-10-02 20:58:33,698 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Src\stm32f1xx_it.c_save
+2021-10-02 20:58:33,799 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Src\stm32f1xx_it.c
+2021-10-02 20:58:33,806 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Inc\stm32f1xx_it.h_save
+2021-10-02 20:58:33,868 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Inc\stm32f1xx_it.h
+2021-10-02 20:58:33,879 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Src\stm32f1xx_hal_msp.c_save
+2021-10-02 20:58:33,968 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Src\stm32f1xx_hal_msp.c
+2021-10-02 20:58:33,972 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\MXTmpFiles\system.tmp_save
+2021-10-02 20:58:34,023 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\MXTmpFiles\system.tmp
+2021-10-02 20:58:34,039 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Inc\stm32f1xx_hal_conf.h_save
+2021-10-02 20:58:34,150 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Inc\stm32f1xx_hal_conf.h
+2021-10-02 20:58:34,159 [WARN] IPConfigManager:3148 - IP not found : TIM
+2021-10-02 20:58:34,211 [WARN] CodeGenerator:3268 - IP not found : null
+2021-10-02 20:58:34,219 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Inc\main.h_save
+2021-10-02 20:58:34,330 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Inc\main.h
+2021-10-02 20:58:34,334 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Src\main.c_save
+2021-10-02 20:58:34,436 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Src\main.c
+2021-10-02 20:58:35,222 [INFO] ProjectBuilder:2578 - Time for Copy HAL[1] : 74mS.
+2021-10-02 20:58:35,226 [INFO] ProjectBuilder:3622 - Project Generator version: 3.14.1
+2021-10-02 20:58:35,637 [INFO] ConfigFileManager:1271 - The Die is : DIE412
+2021-10-02 20:58:37,404 [INFO] ProjectBuilder:3789 - Time for Generating toolchain IDE Files: 2178mS.
+2021-10-02 20:58:37,405 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 1mS.
+2021-10-02 20:58:37,406 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
+2021-10-02 21:00:18,468 [INFO] Gpio:254 - dependency for GPIO []
+2021-10-02 21:00:20,875 [INFO] NvicIntPanel:96 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,450x190,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2021-10-02 21:00:48,405 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 631010256 Bytes (1023410176)
+2021-10-02 21:00:49,810 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 653552592 Bytes (1023410176)
+2021-10-02 21:00:57,033 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 729576400 Bytes (1023410176)
+2021-10-02 21:00:57,420 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: NVIC
+2021-10-02 21:00:57,420 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: SYS
+2021-10-02 21:00:57,420 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: GPIO
+2021-10-02 21:00:57,420 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: RCC
+2021-10-02 21:00:57,420 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: TIM1_8F1
+2021-10-02 21:00:57,422 [INFO] CodeGenerator:663 - code generatio: config db path: C:\ST\STM32CubeIDE_1.7.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.3.0.202107141111\\db\
+2021-10-02 21:00:57,719 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\MXTmpFiles\license.tmp_save
+2021-10-02 21:00:57,768 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\MXTmpFiles\license.tmp
+2021-10-02 21:00:57,797 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\MXTmpFiles\gpio.tmp_save
+2021-10-02 21:00:57,847 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\MXTmpFiles\gpio.tmp
+2021-10-02 21:00:57,903 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Src\stm32f1xx_it.c_save
+2021-10-02 21:00:57,978 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Src\stm32f1xx_it.c
+2021-10-02 21:00:57,983 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Inc\stm32f1xx_it.h_save
+2021-10-02 21:00:58,049 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Inc\stm32f1xx_it.h
+2021-10-02 21:00:58,061 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Src\stm32f1xx_hal_msp.c_save
+2021-10-02 21:00:58,147 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Src\stm32f1xx_hal_msp.c
+2021-10-02 21:00:58,151 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\MXTmpFiles\system.tmp_save
+2021-10-02 21:00:58,203 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\MXTmpFiles\system.tmp
+2021-10-02 21:00:58,212 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Inc\stm32f1xx_hal_conf.h_save
+2021-10-02 21:00:58,271 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Inc\stm32f1xx_hal_conf.h
+2021-10-02 21:00:58,279 [WARN] IPConfigManager:3148 - IP not found : TIM
+2021-10-02 21:00:58,279 [WARN] CodeGenerator:3268 - IP not found : null
+2021-10-02 21:00:58,289 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Inc\main.h_save
+2021-10-02 21:00:58,397 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Inc\main.h
+2021-10-02 21:00:58,402 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Src\main.c_save
+2021-10-02 21:00:58,556 [INFO] CodeEngine:257 - Generated code: C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\Core\Src\main.c
+2021-10-02 21:00:59,332 [INFO] ProjectBuilder:2578 - Time for Copy HAL[1] : 70mS.
+2021-10-02 21:00:59,336 [INFO] ProjectBuilder:3622 - Project Generator version: 3.14.1
+2021-10-02 21:00:59,708 [INFO] ConfigFileManager:1271 - The Die is : DIE412
+2021-10-02 21:01:01,338 [INFO] ProjectBuilder:3789 - Time for Generating toolchain IDE Files: 2002mS.
+2021-10-02 21:01:01,340 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 2mS.
+2021-10-02 21:01:01,341 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.

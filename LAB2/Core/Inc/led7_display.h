@@ -42,6 +42,8 @@ void update_seven_segment_led_buffer(int number);
 void seven_segment_led_driver(void);
 void display7SEG(int number);
 void initialclock(void);
+void update7SEG(int index);
+
 
 
 #endif /* INC_LED7SEG_DISPLAY_H_ */
