@@ -1,12 +1,11 @@
+
 #include "main.h"
 #include "led7_display.h"
-TIM_HandleTypeDef htim2;
-
-
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM2_Init(void);
 
+  */
 int main(void)
 {
 
@@ -18,8 +17,7 @@ int main(void)
 
   MX_GPIO_Init();
   MX_TIM2_Init();
-  HAL_TIM_Base_Start_IT(&htim2);
-  initialclock();
+
   while (1)
   {
     /* USER CODE END WHILE */

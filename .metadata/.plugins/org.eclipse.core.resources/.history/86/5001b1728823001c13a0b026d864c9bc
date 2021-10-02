@@ -1,64 +1,30 @@
 
 #include "main.h"
-#include "led7seg_display.h"
+#include "led7_display.h"
 TIM_HandleTypeDef htim2;
 
-/* USER CODE BEGIN PV */
 
-/* USER CODE END PV */
-
-/* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM2_Init(void);
-/* USER CODE BEGIN PFP */
 
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
-
-/**
-  * @brief  The application entry point.
-  * @retval int
-  */
 int main(void)
 {
-  /* USER CODE BEGIN 1 */
 
-  /* USER CODE END 1 */
-
-  /* MCU Configuration--------------------------------------------------------*/
-
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
-  /* USER CODE BEGIN Init */
 
-  /* USER CODE END Init */
-
-  /* Configure the system clock */
   SystemClock_Config();
 
-  /* USER CODE BEGIN SysInit */
 
-  /* USER CODE END SysInit */
-
-  /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM2_Init();
-  /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
-  /* USER CODE END 2 */
-
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
+  initialclock();
   while (1)
   {
     /* USER CODE END WHILE */
-	  display7SEG(6);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -158,23 +124,26 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_8
+                          |GPIO_PIN_9, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3
-                          |GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6, GPIO_PIN_RESET);
+                          |GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : PA5 PA6 PA7 */
-  GPIO_InitStruct.Pin = GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7;
+  /*Configure GPIO pins : PA5 PA6 PA7 PA8
+                           PA9 */
+  GPIO_InitStruct.Pin = GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_8
+                          |GPIO_PIN_9;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PB0 PB1 PB2 PB3
-                           PB4 PB5 PB6 */
+                           PB4 PB5 PB6 PB7 */
   GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3
-                          |GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6;
+                          |GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -183,13 +152,42 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
 int counter = 100;
+int counterclock=200;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	counter--;
+	counterclock--;
 	if(counter <= 0){
 		counter = 100;
 		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_4);
+	}
+	if(counterclock > 150){
+		HAL_GPIO_WritePin(ENABLE_7SEG_1_PORT, ENABLE_7SEG_1 , RESET);
+		HAL_GPIO_WritePin(ENABLE_7SEG_2_PORT, ENABLE_7SEG_2 , SET);
+		HAL_GPIO_WritePin(ENABLE_7SEG_2_PORT, ENABLE_7SEG_2 , SET);
+		HAL_GPIO_WritePin(ENABLE_7SEG_2_PORT, ENABLE_7SEG_2 , SET);
+		display7SEG(1);
+	}else if(counterclock > 100){
+		HAL_GPIO_WritePin(ENABLE_7SEG_1_PORT, ENABLE_7SEG_1 , SET);
+		HAL_GPIO_WritePin(ENABLE_7SEG_2_PORT, ENABLE_7SEG_2 , RESET);
+		HAL_GPIO_WritePin(ENABLE_7SEG_2_PORT, ENABLE_7SEG_2 , SET);
+		HAL_GPIO_WritePin(ENABLE_7SEG_2_PORT, ENABLE_7SEG_2 , SET);
+		display7SEG(2);
+	}else if(counterclock > 100){
+		HAL_GPIO_WritePin(ENABLE_7SEG_1_PORT, ENABLE_7SEG_1 , SET);
+		HAL_GPIO_WritePin(ENABLE_7SEG_2_PORT, ENABLE_7SEG_2 , SET);
+		HAL_GPIO_WritePin(ENABLE_7SEG_2_PORT, ENABLE_7SEG_2 , RESET);
+		HAL_GPIO_WritePin(ENABLE_7SEG_2_PORT, ENABLE_7SEG_2 , SET);
+		display7SEG(3);
+	}else if(counterclock > 50){
+		HAL_GPIO_WritePin(ENABLE_7SEG_1_PORT, ENABLE_7SEG_1 , SET);
+		HAL_GPIO_WritePin(ENABLE_7SEG_2_PORT, ENABLE_7SEG_2 , SET);
+		HAL_GPIO_WritePin(ENABLE_7SEG_2_PORT, ENABLE_7SEG_2 , SET);
+		HAL_GPIO_WritePin(ENABLE_7SEG_2_PORT, ENABLE_7SEG_2 , RESET);
+		display7SEG(0);
+	}else{
+		counterclock=200;
 	}
 }
 /* USER CODE END 4 */

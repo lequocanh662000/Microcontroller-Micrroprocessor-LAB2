@@ -1,15 +1,17 @@
-20:45:26 **** Incremental Build of configuration Debug for project LAB2 ****
+21:01:32 **** Incremental Build of configuration Debug for project LAB2 ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32f1xx.d" -MT"Core/Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32f1xx.o"
 arm-none-eabi-gcc -o "LAB2.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Dell\STM32CubeIDE\LAB2\LAB2\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LAB2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: LAB2.elf
  
 arm-none-eabi-size   LAB2.elf 
 arm-none-eabi-objdump -h -S  LAB2.elf  > "LAB2.list"
 arm-none-eabi-objcopy  -O ihex  LAB2.elf  "LAB2.hex"
-   text	   data	    bss	    dec	    hex	filename
-   7432	     36	   1644	   9112	   2398	LAB2.elf
 arm-none-eabi-objcopy  -O binary  LAB2.elf  "LAB2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7636	     40	   1648	   9324	   246c	LAB2.elf
 Finished building: default.size.stdout
  
 Finished building: LAB2.list
@@ -19,5 +21,5 @@ Finished building: LAB2.bin
  
  
 
-20:45:27 Build Finished. 0 errors, 0 warnings. (took 1s.315ms)
+21:01:33 Build Finished. 0 errors, 0 warnings. (took 1s.261ms)
 
