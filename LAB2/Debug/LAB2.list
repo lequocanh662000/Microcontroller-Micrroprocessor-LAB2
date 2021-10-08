@@ -291,11 +291,11 @@ void setTimer0(int duration){
  80002c6:	4b09      	ldr	r3, [pc, #36]	; (80002ec <setTimer0+0x3c>)
  80002c8:	2232      	movs	r2, #50	; 0x32
  80002ca:	601a      	str	r2, [r3, #0]
-	timer0_flag = 0;
+	timer0_flag = 0; // toggle two-led
  80002cc:	4b08      	ldr	r3, [pc, #32]	; (80002f0 <setTimer0+0x40>)
  80002ce:	2200      	movs	r2, #0
  80002d0:	601a      	str	r2, [r3, #0]
-	timer1_flag = 0;
+	timer1_flag = 0; // use signal (0,1,2,3) to display 4 7segled
  80002d2:	4b08      	ldr	r3, [pc, #32]	; (80002f4 <setTimer0+0x44>)
  80002d4:	2200      	movs	r2, #0
  80002d6:	601a      	str	r2, [r3, #0]
