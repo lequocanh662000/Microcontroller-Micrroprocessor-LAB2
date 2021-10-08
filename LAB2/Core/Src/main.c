@@ -7,36 +7,74 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM2_Init(void);
 
+int timer0_counter = 0;
+int timer1_counter = 0;
+int timer0_flag = 0;
+int timer1_flag = 0;
+int TIMER_CYCLE = 10;
+void setTimer0(int duration){
+	timer0_counter = duration /TIMER_CYCLE;
+	timer1_counter = 50;
+	timer0_flag = 0;
+	timer1_flag = 0;
+}
+
+void timer_run(){
+	if(timer0_counter == 0){
+		timer0_flag = 1;
+	}
+
+	if(timer1_counter == 49){
+		update7SEG(timer1_flag);
+		if(timer1_flag == 2){
+			HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+			HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_4);
+		}
+	}
+	if(timer1_counter == 0){
+		timer1_flag++;
+		timer1_counter = 50;
+	}
+	if(timer1_flag > 3)timer1_flag = 0;
+
+	if(timer0_counter > 0)timer0_counter--;
+	if(timer1_counter > 0)timer1_counter--;
+}
+
 int main(void)
 {
-
   HAL_Init();
-
-
   SystemClock_Config();
-
-
   MX_GPIO_Init();
   MX_TIM2_Init();
+
   HAL_TIM_Base_Start_IT(&htim2);
   initialclock();
   int hour = 15, min = 8, sec = 50;
+  setTimer0(1000);
+  updateClockBuffer(hour, min);
   while (1)
   {
-    sec++;
-    if(sec >= 60){
-    	sec = 0;
-    	min++;
-    }
-    if(min >= 60){
-    	min = 0;
-    	hour++;
-    }
-    if(hour >= 24){
-    	hour = 0;
-    }
-    updateClockBuffer(hour, min);
-    HAL_Delay(1000);
+	 // Toggle PA5 led and 2-led
+		if(timer0_flag == 1){
+			HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+			HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_4);
+		  	  sec++;
+		      if(sec >= 60){
+		      	sec = 0;
+		      	min++;
+		      }
+		      if(min >= 60){
+		      	min = 0;
+		      	hour++;
+		      }
+		      if(hour >= 24){
+		      	hour = 0;
+		      }
+		      updateClockBuffer(hour, min);
+		      setTimer0(2000);
+		}
+
   }
   /* USER CODE END 3 */
 }
@@ -163,26 +201,11 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-int counter = 100;
-int counterclock = 200;
-int index_led = 0;
 int led_buffer[4] = {0, 0, 0, 0};
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	if(counter <= 0){
-		counter = 100;
-		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_4);
-	}
-	if(counterclock <= 0)counterclock = 200;
-	else if(counterclock == 200)update7SEG(index_led++);//1
-	else if(counterclock == 150)update7SEG(index_led++);//2
-	else if(counterclock == 100)update7SEG(index_led++);//3
-	else if(counterclock == 50)update7SEG(index_led++);//4
-	else if(index_led > 3)index_led = 0;
-
-	counter--;
-	counterclock--;
+	timer_run();
 }
+
 void update7SEG(int index){
 	switch(index){
 		case 0:
