@@ -11,8 +11,7 @@
 #define		ENABLE					0
 #define 	DISABLE					1
 
-static uint8_t matrix8x8LEDConversion[24] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
-												0xff, 0x03, 0x01, 0xcc, 0xcc, 0x01, 0x03, 0xff,
+static uint8_t matrix8x8LEDConversion[16] = {0xff, 0x03, 0x01, 0xcc, 0xcc, 0x01, 0x03, 0xff,
 													0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff}; // show letter A
 
 //static uint8_t column_buffer[] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
@@ -87,9 +86,8 @@ void matrix8x8_led_driver(void){
 	clear_previous_matrix8x8_row_led(led_index);
 
 	led_index = (led_index+1) % SIZE_OF_MATRIX;
-	if(led_index == 0){
-		start_index = (start_index+1) % (SIZE_OF_MATRIX + 8);
-	}
+	if(led_index == 0)(start_index+1) % SIZE_OF_MATRIX;
+
 	tempData = matrix8x8LEDConversion[led_index + start_index];
 	matrix8x8_data_ouput(tempData);
 	set_current_matrix8x8_col_led(led_index);

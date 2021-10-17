@@ -196,8 +196,8 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	//timer_run();
-	//seven_segment_led_driver();
+	timer_run();
+	seven_segment_led_driver();
 	//matrix8x8_led_driver();
 }
 
