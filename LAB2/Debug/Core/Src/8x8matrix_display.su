@@ -1,0 +1,6 @@
+8x8matrix_display.c:49:6:update_row_matrix_8x8_led_buffer	16	static
+8x8matrix_display.c:55:6:matrix8x8_data_ouput	24	static
+8x8matrix_display.c:66:6:clear_previous_matrix8x8_row_led	16	static
+8x8matrix_display.c:73:6:set_current_matrix8x8_col_led	16	static
+8x8matrix_display.c:80:6:matrix8x8_led_driver	16	static
+8x8matrix_display.c:92:6:display_matrix8x8_led	8	static

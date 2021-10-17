@@ -1,0 +1,45 @@
+/*
+ * 8x8matrix_display.c
+ *
+ *  Created on: Oct 8, 2021
+ *      Author: Dell
+ */
+#include "main.h"
+#include "8x8matrix_display.h"
+#define 	MAX_LED_MATRIX		8
+
+static uint8_t column_buffer[] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
+static uint8_t row_buffer[]    = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
+
+
+ void updateLEDMatrix(int index){
+	 switch (index){
+	 	 case 0:
+	 		 HAL_GPIO_WritePin(ENABLE, GPIO_Pin, PinState)
+	 		 break;
+	 	 case 1:
+
+	 		 break;
+	 	 case 2:
+
+	 		 break;
+	 	 case 3:
+
+	 		 break;
+	 	 case 4:
+
+	 		 break;
+	 	 case 5:
+
+	 		 break;
+	 	 case 6:
+
+	 		 break;
+	 	 case 7:
+
+	 		 break;
+	 	 default:
+
+	 		 break;
+	 }
+ }

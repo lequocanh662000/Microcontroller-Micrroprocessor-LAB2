@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;LAB2/Core/Src/Finite State Machine/fsm_clock_display.c&apos; to &apos;fsm_leds_display.c&apos;" description="Rename resource &apos;fsm_clock_display.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/Finite State Machine/fsm_clock_display.c" name="fsm_leds_display.c" stamp="1634399448547" updateReferences="true"/>
+</session>

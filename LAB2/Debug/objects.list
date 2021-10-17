@@ -1,3 +1,4 @@
+"./Core/Src/8x8matrix_display.o"
 "./Core/Src/led7_display.o"
 "./Core/Src/main.o"
 "./Core/Src/stm32f1xx_hal_msp.o"

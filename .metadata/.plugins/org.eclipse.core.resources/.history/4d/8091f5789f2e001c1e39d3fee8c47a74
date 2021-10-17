@@ -1,0 +1,21 @@
+#include "led7_display.h"
+int hour = 15, min = 8, sec = 50;
+
+void fsm_7_segmnent_led_clock_display(int flag){
+	if(clocktimer_flag == 1){
+	  		sec++;
+		    if(sec >= 60){
+		      sec = 0;
+		      min++;
+		    }if(min >= 60){
+		      min = 0;
+		      hour++;
+		    }if(hour >= 24){
+		      hour = 0;
+		    }
+	  		 updateClockBuffer(hour, min);
+	  		 setClockTimer(1000);
+	  	  }
+
+	seven_segment_led_driver();
+}
